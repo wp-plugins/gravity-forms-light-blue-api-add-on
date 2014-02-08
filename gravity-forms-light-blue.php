@@ -3,8 +3,8 @@
 /*
 Plugin Name: Gravity Forms Light Blue API Add-On
 Description: This plugin allows Gravity Forms to send data directly to the Light Blue API
-Version: 1.0
-Version date: 05/02/2014
+Version: 1.0.2
+Version date: 08/02/2014
 Author: Light Blue Software Ltd
 Author URI: http://www.lightbluesoftware.com
 

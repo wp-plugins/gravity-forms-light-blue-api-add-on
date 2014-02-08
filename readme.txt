@@ -2,7 +2,7 @@
 Tags: light blue,photography, business management,gravity forms, forms, form,contact form
 Requires at least: 3.5
 Tested up to: 3.8.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Contributors: tomcatchesides
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -56,6 +56,10 @@ To use the Gravity Forms Light Blue API add-on, you need:
 
 == Changelog ==
 
+= 1.0.2 =
+
+* Fixing version number.
+
 = 1.0.1 =
 
 * Fixing compatibility problems that prevented the plugin from installing properly via WordPress's automatic installation tool.
@@ -65,6 +69,10 @@ To use the Gravity Forms Light Blue API add-on, you need:
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+
+* Fixing version number.
 
 = 1.0.1 =
 
