@@ -1,7 +1,7 @@
 === Gravity Forms Light Blue API Add-On ===
 Tags: light blue,photography, business management,gravity forms, forms, form,contact form
 Requires at least: 3.5
-Tested up to: 3.8.1
+Tested up to: 3.9
 Stable tag: 1.0.2
 Contributors: tomcatchesides
 License: GPLv2 or later
