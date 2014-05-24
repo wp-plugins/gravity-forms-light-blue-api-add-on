@@ -1,8 +1,8 @@
 === Gravity Forms Light Blue API Add-On ===
 Tags: light blue,photography, business management,gravity forms, forms, form,contact form
 Requires at least: 3.5
-Tested up to: 3.9
-Stable tag: 1.0.2
+Tested up to: 3.9.1
+Stable tag: 1.0.3
 Contributors: tomcatchesides
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -56,6 +56,10 @@ To use the Gravity Forms Light Blue API add-on, you need:
 
 == Changelog ==
 
+= 1.0.3 =
+
+* Fixed a problem with parsing times entered via Gravity Forms' 'Time' advanced field.
+
 = 1.0.2 =
 
 * Fixing version number.
@@ -69,6 +73,10 @@ To use the Gravity Forms Light Blue API add-on, you need:
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+
+* Fixed a problem with parsing times entered via Gravity Forms' 'Time' advanced field.
 
 = 1.0.2 =
 

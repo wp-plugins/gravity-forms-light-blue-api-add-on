@@ -53,7 +53,7 @@ add_action('init',  array('GFLightBlueAPI', 'init'));
 class GFLightBlueAPI {
 
 private static $name = "Gravity Forms Light Blue Add-On";
-private static $path = "gravity-forms-light-blue/gravity-forms-light-blue.php";
+private static $path = "gravity-forms-light-blue-api-add-on/gravity-forms-light-blue.php";
 private static $version = "0.1";
 private static $min_gravityforms_version = "1.6";  // I'm specifying 1.6 in case we decide to change from gform_pre_submission to gform_after_submission
 
@@ -242,7 +242,7 @@ public static function lb_gform_pre_submission( $form ) {
 	$submitted_data = array();
 	$settings = get_option("gf_light_blue_settings");
 	
-	/*
+	
 	if( isset($settings["debug"]) && ($settings["debug"] == 'on' ) ) {  // Send debugging email
 		ob_start();
 		var_dump($form);
@@ -253,7 +253,7 @@ public static function lb_gform_pre_submission( $form ) {
 		mail( get_option('admin_email'), 'Light Blue API for Gravity Forms $_POST', ob_get_contents() );
 		ob_end_clean();
 	}
-	*/
+	
 
 	// Build up an array of values submitted via the form
 	foreach( $form["fields"] as $field) {
@@ -269,7 +269,7 @@ public static function lb_gform_pre_submission( $form ) {
 							$value .= stripslashes( $_POST["input_".str_replace('.', '_', $input["id"] )] );
 						}
 				   }	
-				}				
+				}
 			} else {
 				foreach( $field["inputs"] as $input ) {
 					if( isset( $input["name"] ) && ($input["name"] != '') ) {
@@ -294,6 +294,24 @@ public static function lb_gform_pre_submission( $form ) {
 						$value .= stripslashes( $multiselect_value );
 					}
 				}
+			}
+		} elseif( $field["type"] == "time" ) {	
+			if( isset( $field["inputName"] ) && ($field["inputName"] != '') ) {
+				$label = $field["inputName"];
+				$hours = 0;
+				$minutes = 0;
+				$ampm = '';
+				if( isset( $_POST["input_" . $field["id"]][0] ) ) {
+					$hours = stripslashes( $_POST["input_" . $field["id"]][0] );
+				}
+				if( isset( $_POST["input_" . $field["id"]][1] ) ) {
+					$minutes = stripslashes( $_POST["input_" . $field["id"]][1] );
+				}
+				if( isset( $_POST["input_" . $field["id"]][2] ) ) {
+					$ampm = stripslashes( $_POST["input_" . $field["id"]][2] );
+				}
+				$value = $hours.":".$minutes;
+				if( $ampm != '' ) { $value .= ' '.$ampm; }
 			}
 		} else {  // This is a single-input field
 			if( isset( $field["inputName"] ) && ($field["inputName"] != '') ) {
@@ -356,7 +374,7 @@ public static function lb_gform_pre_submission( $form ) {
 
 
 
-public static function plugin_settings_link( $links, $file ) {  // modify the link by unshifting the array
+public static function plugin_settings_link( $links ) {  // modify the link by unshifting the array
 	$settings_link = '<a href="' . admin_url( 'admin.php?page=gf_settings&subview=Light+Blue+API' ) . '">Settings</a>';
 	array_unshift( $links, $settings_link );
 	return $links;
