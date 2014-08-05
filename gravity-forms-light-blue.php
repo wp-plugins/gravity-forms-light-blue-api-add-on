@@ -3,8 +3,8 @@
 /*
 Plugin Name: Gravity Forms Light Blue API Add-On
 Description: This plugin allows Gravity Forms to send data directly to the Light Blue API
-Version: 1.0.2
-Version date: 08/02/2014
+Version: 1.0.4
+Version date: 05/08/2014
 Author: Light Blue Software Ltd
 Author URI: http://www.lightbluesoftware.com
 
@@ -54,7 +54,7 @@ class GFLightBlueAPI {
 
 private static $name = "Gravity Forms Light Blue Add-On";
 private static $path = "gravity-forms-light-blue-api-add-on/gravity-forms-light-blue.php";
-private static $version = "0.1";
+private static $version = "1.0.4";
 private static $min_gravityforms_version = "1.6";  // I'm specifying 1.6 in case we decide to change from gform_pre_submission to gform_after_submission
 
 
@@ -224,15 +224,13 @@ public static function lb_test_account( &$message ) {
 		$message = "WordPress error: ".$response->get_error_message();
 		Return False;
 	} else {
-		if ( $response["response"]["code"] == 200 ) {
-			$status_array = Explode( Chr(13), $response["body"] );
-			if( $status_array[0] == 0 ) {
-				$message = $status_array[1];
-				Return True;
-			} else {
-				$message = $status_array[1];
-				Return False;
-			}
+		$status_array = Explode( Chr(13), $response["body"] );
+		if( $status_array[0] == 0 ) {
+			$message = $status_array[1];
+			Return True;
+		} else {
+			$message = $status_array[1];
+			Return False;
 		}
 	}
 
