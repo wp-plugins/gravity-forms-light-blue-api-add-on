@@ -3,8 +3,8 @@
 /*
 Plugin Name: Gravity Forms Light Blue API Add-On
 Description: This plugin allows Gravity Forms to send data directly to the Light Blue API
-Version: 1.0.5
-Version date: 04/09/2014
+Version: 1.0.6
+Version date: 21/04/2015
 Author: Light Blue Software Ltd
 Author URI: http://www.lightbluesoftware.com
 
@@ -54,7 +54,7 @@ class GFLightBlueAPI {
 
 private static $name = "Gravity Forms Light Blue Add-On";
 private static $path = "gravity-forms-light-blue-api-add-on/gravity-forms-light-blue.php";
-private static $version = "1.0.5";
+private static $version = "1.0.6";
 private static $min_gravityforms_version = "1.6";  // I'm specifying 1.6 in case we decide to change from gform_pre_submission to gform_after_submission
 
 
