@@ -1,8 +1,8 @@
 === Gravity Forms Light Blue API Add-On ===
 Tags: light blue,photography, business management,gravity forms, forms, form,contact form
 Requires at least: 3.5
-Tested up to: 4.2
-Stable tag: 1.0.6
+Tested up to: 4.2.2
+Stable tag: 1.0.7
 Contributors: tomcatchesides
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -56,6 +56,10 @@ To use the Gravity Forms Light Blue API add-on, you need:
 
 == Changelog ==
 
+= 1.0.7 =
+
+* Added support for the 'Enable Email Confirmation' option for Gravity Forms' email control.
+
 = 1.0.6 =
 
 * Updated the 'tested up to' parameter after successfully testing the plugin with WordPress 4.2.
@@ -85,6 +89,10 @@ To use the Gravity Forms Light Blue API add-on, you need:
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.7 =
+
+* Added support for the 'Enable Email Confirmation' option for Gravity Forms' email control.
 
 = 1.0.6 =
 
